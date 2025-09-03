@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, Helvetica;
+
+        color: rgb(255, 255, 255);
+    }
+
+    .main {
+        background: url(https://images.unsplash.com/photo-1518563077661-23ad56581d77?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGFyayUyMHNlYXxlbnwwfHwwfHx8MA%3D%3D) no-repeat center center/cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        min-height: 100vh;
+        max-height: max-content;
+    }
+
+    nav {
+        top: 0;
+        backdrop-filter: blur(10px);
+        height: 5vh;
+        margin: 2em 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: sticky;
+
+    }
+
+    nav>* {
+
+        border-radius: 20px;
+        font-size: 0.7em;
+        padding: 2px;
+        width: 10vw;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        transition: all .2s;
+    }
+
+    nav>*:hover {
+        font-size: larger;
+        cursor: pointer;
+        box-shadow: 0 0 20px rgb(0, 0, 0);
+
+    }
+
+    .crtacc {
+        margin: 20px 20px;
+        cursor: pointer;
+        color: white;
+        border: none;
+        border: 20px;
+        width: 15em;
+        height: 3em;
+        background-color: rgb(6, 92, 95);
+        border-radius: 20px;
+        transition: all .2s;
+
+    }
+
+    .crtacc:hover {
+        width: 15.5em;
+        height: 3.2em;
+        box-shadow: 0 0 20px rgb(3, 66, 55);
+        background-color: rgb(17, 105, 106);
+    }
+
+    .fac {
+        margin: 1rem auto;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .p {
+        width: 70vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .p>p {
+        width: 60vw;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .startup {
+        font-size: large;
+    }
+
+    .center-content {
+        width: 60vw;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .btn {
+        height: 5vh;
+    }
+
+    .content {
+        background: url(https://static.vecteezy.com/system/resources/thumbnails/027/993/103/small_2x/ocean-with-a-moon-in-the-dark-photo.jpg) no-repeat center center/cover;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        min-height: 80vh;
+
+    }
+
+    .contentc {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.147);
+        backdrop-filter: blur(10px);
+        width: 80vw;
+        gap: 20px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .contentc>* {
+        width: 50vw;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .free-sample>p {
+        width: 100%;
+        font-size: small;
+    }
+
+    .pgffs {
+        font-size: 20px;
+    }
+
+    .pgffsp {
+        text-align: center;
+        width: 50%;
+        font-size: 1rem;
+    }
+
+    footer {
+        background-color: rgb(6, 99, 99);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 40vh;
+        font-size: .7rem;
+    }
+
+    .fa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-decoration: none;
+        font-size: x-large;
+        color: white;
+    }
+
+    .fa:hover {
+        opacity: 0.7;
+        text-shadow: 0 0 20px rgb(255, 255, 255);
+        transition: all .2s;
+
+    }
+
+    .fa-facebook {
+        color: white;
+        border-radius: 100%;
+    }
+
+    .fa-twitter {
+        color: white;
+        border-radius: 100%;
+    }
+
+    .fa-google {
+        color: white;
+        border-radius: 100%;
+    }
+
+    .upfoot,
+    .downfoot {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .upleft {
+        width: 30%;
+        margin-left: 2rem;
+    }
+
+    .upright {
+        width: 30%;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 2rem;
+
+    }
+
+    .left-df {
+        height: 30px;
+        width: 30%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+        margin-left: 2rem;
+    }
+
+    .left-df>div {
+        transition: all .1s;
+        display: block;
+        float: left;
+    }
+
+    .left-df>div:hover {
+        width: max-content;
+        cursor: pointer;
+        text-shadow: 0 0 20px rgb(255, 255, 255);
+        border: none;
+        font-size: large;
+    }
+
+    .right-df {
+        width: 30%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 2rem;
+
+    }
+</style>
+<style>
+    .testimonial {
+        background-color: #12282e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: max-content;
+    }
+
+    .testimonial-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3rem 0;
+        max-width: 70vw;
+    }
+
+    div.ohc {
+        margin: 20px 0px;
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .card1,
+    .card2,
+    .card3,
+    .card4 {
+        gap: 20px;
+        border: white 2px solid;
+        border-radius: 15px;
+        display: flex;
+        padding: 20px;
+        line-height: 1.8;
+        min-height: 150px;
+        width: 450px;
+        min-width: 200px;
+        transition: all 1s;
+    }
+
+    @media only screen and (max-width: 90em) {
+        .cards>* {
+            width: 350px;
+            min-height: 200px;
+        }
+    }
+
+    @media only screen and (max-width: 80em) {
+        .cards>* {
+            width: 800px;
+        }
+    }
+
+    .cardimg>img {
+        width: 5rem;
+        border-radius: 15px;
+        height: 5rem;
+        justify-self: center;
+    }
+
+    .cardcontent {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .cardbase {
+        color: rgb(113, 110, 110);
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 700;
+    }
+</style>
+<style>
+    * {
+        transition: all .5s;
+    }
+
+    .features {
+        background-color: #12282e;
+        display: flex;
+        min-height: 60vh;
+    }
+
+    .features-content {
+        display: flex;
+        align-items: center;
+        min-height: max-content;
+        /* background-color: pink; */
+        width: 100%;
+        padding: 20px;
+    }
+
+    @media only screen and (max-width:50rem) {
+        .features-content {
+            flex-wrap: wrap;
+        }
+    }
+
+    @media only screen and (max-width:75rem) {
+        .features-content {
+            width: 100%;
+        }
+
+    }
+
+    .features-contentt {
+        /* background-color: blue; */
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        transition: all 1s;
+        width: 100%;
+        height: max-content;
+        padding: 20px;
+        gap: 20px;
+    }
+
+
+
+    .features-base {
+        display: flex;
+        gap: 20px;
+    }
+
+    .laptop {
+        width: 60%;
+        /* background-color: yellow; */
+    }
+
+    @media only screen and (min-width:75rem) {
+
+        .laptop {
+            /* background-color: brown; */
+            width: 40%;
+        }
+
+        .features-contentt {
+            /* background-color: red; */
+            max-width: 100;
+            padding: 0px;
+        }
+
+        .features-contentt,
+        .features-base {
+            gap: 20px;
+            /* background-color: chartreuse; */
+        }
+    }
+
+    .laptop>img {
+        /* background-color: red; */
+        min-width: 35rem;
+        width: 100%;
+        translate: -150px;
+        margin-right: 0px;
+
+    }
+
+    @media only screen and (max-width:50rem) {
+        .laptop>img {
+            translate: 0px;
+            min-width: 100%;
+        }
+
+        .laptop {
+            justify-content: center;
+            width: 100%;
+        }
+    }
+
+    .wcsn,
+    .part1,
+    .part2 {
+        line-height: 1.7;
+        /* background-color: aqua; */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .part1>i,
+    .part2>i {
+        justify-content: left;
+    }
+</style>
+<style>
+    .form {
+        background: url(https://static.vecteezy.com/system/resources/thumbnails/027/993/103/small_2x/ocean-with-a-moon-in-the-dark-photo.jpg) no-repeat center center/cover;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+    }
+
+    .form-content {
+        /* background-color: red; */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: min-content;
+        gap: 20px;
+        padding: 20px 0px;
+        max-width: 70rem;
+        width: 100%;
+
+    }
+
+
+    .form-contentt {
+        max-width: 60rem;
+        width: 100%;
+        /* background-color: blue; */
+        line-height: 1.5;
+        font-size: x-large;
+        padding: 30px;
+    }
+
+    .form-login {
+        padding: 20px;
+        border-radius: 20px;
+        background-color: white;
+        gap: 20px;
+        display: flex;
+        min-height: 20rem;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        max-width: 30rem;
+        min-width: 0;
+    }
+
+    @media only screen and (max-width:60rem) {
+        .form-content {
+            flex-wrap: wrap;
+            /* background-color: red; */
+            gap: 30px;
+
+        }
+        .signup-login{
+            min-width: 10rem;
+        }
+    }
+
+
+    .form-login>hr {
+        color: black;
+        width: 100%;
+    }
+
+    .signup-login {
+        margin: 30px 0px;
+        font-weight: 700;
+        color: black;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        text-underline-offset: 10px;
+    }
+
+    .size {
+        width: 100%;
+        height: 2.5rem;
+        border-radius: 20px;
+        border: 1px solid rgba(94, 90, 90, 0.395);
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #create-an-account {
+        background-color: rgb(66, 207, 164);
+        border: none;
+        color: white;
+    }
+
+    #login-via-twitter {
+        background-color: rgb(37, 182, 215);
+        border: none;
+        color: white;
+    }
+input[type=email], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.hoverr:hover{
+    cursor: pointer;
+    filter: contrast(150%);
+}
+</style>
+
+<body>
+    <div class="main">
+        <nav>
+            <div>Home</div>
+            <div>Content</div>
+            <div>Features</div>
+            <div>Pricing</div>
+            <div>Blog</div>
+            <div>Be</div>
+        </nav>
+        <div class="center-content">
+            <div class="starup">
+                <h3 class="startup">Startup 3</h3>
+            </div>
+            <div class="fac">
+                <h1>Forget About Code</h1>
+            </div>
+            <div class="p">
+                <p>Startup Frame gives you complete freedom over your creative process - you don't have to think ro
+                    about any technical aspects. There are no limits and absolutely no coding.</p>
+            </div>
+            <div class="btn">
+                <input type="submit" class="crtacc" value="Create an Account">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="contentc">
+            <div class="free-sample">
+                <p>FREE SAMPLE</p>
+            </div>
+            <div class="pgffs">
+                <h1>Powerful Generator and Free Figma Sources</h1>
+            </div>
+            <div class="pgffsp">
+                <p>Startup Framework contains components and complex blocks which can easily be integrated into almost
+                    any
+                    design.All of the components are made in the same style, and can easily be integrated into projects,
+                    allowing you to create hundreds of solutions.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="features">
+        <div class="features-content">
+            <div class="laptop">
+                <img src="https://pngimg.com/uploads/laptop/laptop_PNG101788.png" alt="">
+            </div>
+            <div class="features-contentt">
+                <div class="wcsn">
+                    <h1>We Create Something New</h1>
+                    <p>We have created a new product that will help designers, developers and companies create websites
+                        for their startup quickly and easily.</p>
+                </div>
+                <div class="features-base">
+                    <div class="part1">
+                        <i class="fa fa-copy" style="font-size:36px;"></i>
+                        <h4>30 NEW FEATURES PAGES</h4>
+                        <p>Startup Framework contains components and complex blocks which can easily.</p>
+                    </div>
+                    <div class="part2">
+                        <i class="fa fa-diamond" style="font-size:36px"></i>
+                        <h4>USEFUL SYMBOL COMPONENTS</h4>
+                        <p>Samples will show you the feeling on how to play around using the components.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="form">
+        <div class="form-content">
+            <div class="form-contentt">
+                <h2>We solve digital problems with an outstanding creative flare</h2>
+                <p>We have created a new product that will help designers,developers and companies create wesites for
+                    thier startups quickly and easily.</p>
+            </div>
+            <div class="form-login">
+                <div class="signup-login">
+                    <div class="signup"><u>SIGN UP</u></div>
+                    <div class="login">LOGIN</div>
+                </div>
+                <input type="email" placeholder="Your Email" class="size email">
+                <input type="password" name="" id="" class="size" placeholder="Your Password">
+                <input type="submit" name="" id="create-an-account" class="size hoverr" value="Create an Account">
+                <hr>
+                <input type="submit" name="" id="login-via-twitter" class="size hoverr" value="Login via Twitter">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="testimonial">
+        <div class="testimonial-content">
+            <div class="ohc">
+                <h1>Our Happy Clients</h1>
+            </div>
+            <div class="cards">
+                <div class="card1">
+                    <div class="cardimg"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3jXDQHV0iY3MuqPg91BSbAzKyG--DjcOpda23kJz2kjGVlc4oILHPkOJtQc4ss5YjmZc&usqp=CAU"
+                            alt=""></div>
+                    <div class="cardcontent">
+                        <div class="para">Get a fully retina ready site when you build with Startup Framework. Websites
+                            looj sharper and more gorgeous on devices with retina display support.</div>
+                        <div class="cardbase">RAYHAN CURRAN</div>
+                    </div>
+                </div>
+                <div class="card2">
+                    <div class="cardimg"><img
+                            src="https://upload.wikimedia.org/wikipedia/en/d/dc/Tokyo_%28Money_Heist%29.jpg" alt="">
+                    </div>
+                    <div class="cardcontent">
+                        <div class="para">As a business targeting high net worth individuals,we were looking for a
+                            slick, cool and mini-malistic design for our website.</div>
+                        <div class="cardbase">RAYHAN CURRAN</div>
+                    </div>
+                </div>
+                <div class="card3">
+                    <div class="cardimg"><img
+                            src="https://upload.wikimedia.org/wikipedia/en/4/45/Berlin_%28Money_Heist%29.jpg" alt="">
+                    </div>
+                    <div class="cardcontent">
+                        <div class="para">The most part of the Startup Framework is the samples.</div>
+                        <div class="cardbase">RAYHAN CURRAN</div>
+                    </div>
+                </div>
+                <div class="card4">
+                    <div class="cardimg"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0w5DBvWqN_Ju89Zm3wuCJ7AXCFGyMypasbw&s"
+                            alt=""></div>
+                    <div class="cardcontent">
+                        <div class="para">I have built my website with Startup just in one day, and it was ready-to-go.
+                        </div>
+                        <div class="cardbase">RAYHAN CURRAN</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="upfoot">
+            <div class="upleft">Startup 3</div>
+            <div class="upright">
+                <div>
+                    <p>Privacy Policy</p>
+                </div>
+                <div>
+                    <p>Terms</p>
+                </div>
+                <div></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    </a>
+                </div>
+                <div><a href="#" class="fa fa-facebook"></a></div>
+                <div> <a href="#" class="fa fa-google"></a></div>
+            </div>
+        </div>
+        <hr>
+        <div class="downfoot">
+            <div class="left-df">
+                <div>Tour</div>
+                <div>Features</div>
+                <div>Pricing Plans</div>
+                <div>Our
+                    Works</div>
+                <div>Brands</div>
+                <div>Contacts</div>
+            </div>
+            <div class="right-df">&#169 2017 Desigmodo. All rights reserved.</div>
+        </div>
+    </footer>
+</body>
+
+</html>
